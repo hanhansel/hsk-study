@@ -1,0 +1,26 @@
+{
+  "name": "hsk-study",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal offline HSK 3.0 (2025 syllabus) study app: flashcards with spaced repetition, quizzes, listening and tone drills, and a reader.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev": "node scripts/build.ts --serve",
+    "build": "node scripts/build.ts",
+    "preview": "node scripts/serve.ts docs",
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "data": "node scripts/build-data.ts --official ../sources/hsk-3.0-vocabulary-dataset --dict ../complete-hsk-vocabulary --krmanik ../sources/HSK-3.0 --strokes ../sources/hanzi-writer-data"
+  },
+  "dependencies": {
+    "hanzi-writer": "^3.7.3",
+    "ts-fsrs": "5.4.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "typescript": "^6.0.3"
+  }
+}
